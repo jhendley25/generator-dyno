@@ -27,15 +27,6 @@ gulp.task('compass', function() {
         .pipe( livereload( server ));
 });
 
-
-// gulp.task('js', function() {
-//   return gulp.src('src/scripts/*.js')
-//     .pipe( uglify() )
-//     .pipe( concat('all.min.js'))
-//     .pipe( gulp.dest('dist/scripts/'))
-//     .pipe( livereload( server ));
-// });
-
 gulp.task('coffee', function() {
   return gulp.src('src/scripts/main.coffee', { read: false })
     .pipe(browserify({
