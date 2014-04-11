@@ -1,6 +1,3 @@
-// Thanks to @chriskjaer for this great gulpfile!
-// https://gist.github.com/chriskjaer/8634047
-
 var gulp        = require('gulp'),
     gutil       = require('gulp-util'),
     sass        = require('gulp-sass'),
@@ -13,25 +10,11 @@ var gulp        = require('gulp'),
     tinylr      = require('tiny-lr'),
     express     = require('express'),
     app         = express(),
-    marked      = require('marked'), // For :markdown filter in jade
+    marked      = require('marked'),
     path        = require('path'),
     rename      = require('gulp-rename'),
     browserify  = require('gulp-browserify'),
     server      = tinylr();
-
-
-// --- Basic Tasks ---
-// gulp.task('css', function() {
-//   return gulp.src('./src/stylesheets/*.scss')
-//     .pipe(compass({
-//       css: 'dist/stylesheets',
-//       sass: 'src/stylesheets',
-//       image: 'dist/images'
-//     }))
-//     .pipe( csso() )
-//     .pipe( gulp.dest('dist/stylesheets/') )
-//     .pipe( livereload( server ));
-// });
 
 gulp.task('compass', function() {
     gulp.src('./src/stylesheets/*.scss')
