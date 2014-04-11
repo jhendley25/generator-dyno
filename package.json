@@ -1,10 +1,13 @@
 {
   "name": "generator-dyno",
-  "version": "0.0.0",
-  "description": "Coffeescript, Browserify, Gulp, and Jade",
+  "version": "0.0.1",
+  "description": "A Yeoman Generator that gives ya Coffeescript, Browserify, Gulp, and Jade",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "jhendley25/generator-dyno",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jhendley25/generator-dyno.git"
+  },
   "author": {
     "name": "Jake",
     "email": "jhendley25@gmail.com",
