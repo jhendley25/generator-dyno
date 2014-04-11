@@ -1,4 +1,4 @@
-# generator-dyno [![Build Status](https://secure.travis-ci.org/jhendley25/generator-dyno.png?branch=master)](https://travis-ci.org/jhendley25/generator-dyno)
+# generator-dyno 
 
 > [Yeoman](http://yeoman.io) generator
 
@@ -35,7 +35,7 @@ Finally, initiate the generator:
 $ yo dyno
 ```
 
-Once everything is ready, start the local server
+Once everything is ready, start the local server:
 
 ```
 $ gulp
