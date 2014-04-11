@@ -1,0 +1,14 @@
+body, * {
+  font-family: sans-serif;
+}
+.container {
+  width: 400px;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin: 0 auto;
+  padding: 5px;
+  h1 {
+    text-align: center;
+  }
+}
