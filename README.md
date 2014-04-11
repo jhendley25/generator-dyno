@@ -35,7 +35,7 @@ Finally, initiate the generator:
 $ yo dyno
 ```
 
-Once everything is ready, start the local server"
+Once everything is ready, start the local server
 
 ```
 $ gulp
