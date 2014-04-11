@@ -6,7 +6,7 @@
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/jhendley25/generator-dyno.git"
+    "url": "https://github.com/jhendley25/generator-dyno.git"
   },
   "author": {
     "name": "Jake",
@@ -23,7 +23,8 @@
     "app"
   ],
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+    "generator"
   ],
   "dependencies": {
     "yeoman-generator": "~0.16.0",
