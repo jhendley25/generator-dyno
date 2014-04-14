@@ -27,7 +27,7 @@ var DynoGenerator = yeoman.generators.Base.extend({
 
     var prompts = [{
       type: 'confirm',
-      name: 'Coffeescript',
+      name: 'coffescriptOption',
       message: 'Would you like to Include Coffeescript?',
       default: true
     }];
@@ -41,9 +41,8 @@ var DynoGenerator = yeoman.generators.Base.extend({
 
   app: function () {
     this.mkdir('src');
-
-
     this.mkdir('src/scripts');
+
     if (!this.coffescriptOption) {
       this.template('_main.js', 'src/scripts/main.js')
       this.template('_example.js', 'src/scripts/example.js')
