@@ -27,13 +27,13 @@ var DynoGenerator = yeoman.generators.Base.extend({
 
     var prompts = [{
       type: 'confirm',
-      name: 'Welcome',
-      message: 'Would you like to continue?',
+      name: 'Coffeescript',
+      message: 'Would you like to Include Coffeescript?',
       default: true
     }];
 
     this.prompt(prompts, function (props) {
-      this.someOption = props.someOption;
+      this.coffescriptOption = props.coffescriptOption;
 
       done();
     }.bind(this));
@@ -42,17 +42,24 @@ var DynoGenerator = yeoman.generators.Base.extend({
   app: function () {
     this.mkdir('src');
 
-    this.template('_index.jade', 'src/index.jade')
 
     this.mkdir('src/scripts');
-    this.template('_main.coffee', 'src/scripts/main.coffee')
-    this.template('_example.coffee', 'src/scripts/example.coffee')
+    if (!this.coffescriptOption) {
+      this.template('_main.js', 'src/scripts/main.js')
+      this.template('_example.js', 'src/scripts/example.js')
+      this.copy('_gulpfileJavascript.js', 'gulpfile.js');
+      this.template('_index-js.jade', 'src/index.jade')
+    } else {
+      this.template('_main.coffee', 'src/scripts/main.coffee')
+      this.template('_example.coffee', 'src/scripts/example.coffee')
+      this.copy('_gulpfileCoffee.js', 'gulpfile.js');
+      this.template('_index-coffee.jade', 'src/index.jade')
+    }
     
     this.mkdir('src/stylesheets');
     this.template('_main.scss', 'src/stylesheets/main.scss')
 
     this.copy('_package.json', 'package.json');
-    this.copy('_gulpfile.js', 'gulpfile.js');
     this.copy('gitignore', '.gitignore');
   },
 
