@@ -55,6 +55,8 @@ var DynoGenerator = yeoman.generators.Base.extend({
       this.template('_index-coffee.jade', 'src/index.jade')
     }
     
+    this.mkdir('src/images');
+
     this.mkdir('src/stylesheets');
     this.template('_main.scss', 'src/stylesheets/main.scss')
 

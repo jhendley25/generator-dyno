@@ -35,6 +35,11 @@ gulp.task('js', function() {
     .pipe( livereload( server ));
 });
 
+gulp.task('images', function() {
+  return gulp.src('./src/images/*')
+    .pipe(gulp.dest('./dist/images'))
+})
+
 gulp.task('templates', function() {
   return gulp.src('src/*.jade')
     .pipe(jade({
@@ -66,4 +71,4 @@ gulp.task('watch', function () {
 });
 
 // Default Task
-gulp.task('default', ['js','compass','templates','express','watch']);
+gulp.task('default', ['js','compass','templates', 'images', 'express','watch']);
