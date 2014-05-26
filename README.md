@@ -8,7 +8,6 @@
 ### What is Dyno?
 
 Dyno is a Yeoman generator that provides a nice set of defaults for ground-up web development. It scaffolds out a barebones webapp with cool tech:
-[This link](http://example.net/)
 - [Coffeescript](http://coffeescript.org/) (optional, but seriously awesome)
 - [Browserify](http://browserify.org/) for dependency management
 - [Gulp](http://gulpjs.com/) for running tasks
