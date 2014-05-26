@@ -1,0 +1,162 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/0.10.26/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'publish' ]
+2 info using npm@1.4.3
+3 info using node@v0.10.26
+4 verbose publish [ '.' ]
+5 verbose cache add [ '.', null ]
+6 verbose cache add name=undefined spec="." args=[".",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: '.',
+7 verbose parsed url   path: '.',
+7 verbose parsed url   href: '.' }
+8 silly lockFile 3a52ce78- .
+9 verbose lock . /Users/jhendley25/.npm/3a52ce78-.lock
+10 verbose tar pack [ '/var/folders/xt/z_wwtn6j3819zn5pmq5cb4hc0000gn/T/npm-22530-mAF7y-C5/1401147744065-0.34671313990838826/tmp.tgz',
+10 verbose tar pack   '.' ]
+11 verbose tarball /var/folders/xt/z_wwtn6j3819zn5pmq5cb4hc0000gn/T/npm-22530-mAF7y-C5/1401147744065-0.34671313990838826/tmp.tgz
+12 verbose folder .
+13 info prepublish generator-dyno@0.1.0
+14 silly lockFile 1f1177db-tar tar://.
+15 verbose lock tar://. /Users/jhendley25/.npm/1f1177db-tar.lock
+16 silly lockFile 064ee518-4065-0-34671313990838826-tmp-tgz tar:///var/folders/xt/z_wwtn6j3819zn5pmq5cb4hc0000gn/T/npm-22530-mAF7y-C5/1401147744065-0.34671313990838826/tmp.tgz
+17 verbose lock tar:///var/folders/xt/z_wwtn6j3819zn5pmq5cb4hc0000gn/T/npm-22530-mAF7y-C5/1401147744065-0.34671313990838826/tmp.tgz /Users/jhendley25/.npm/064ee518-4065-0-34671313990838826-tmp-tgz.lock
+18 silly lockFile 1f1177db-tar tar://.
+19 silly lockFile 1f1177db-tar tar://.
+20 silly lockFile 064ee518-4065-0-34671313990838826-tmp-tgz tar:///var/folders/xt/z_wwtn6j3819zn5pmq5cb4hc0000gn/T/npm-22530-mAF7y-C5/1401147744065-0.34671313990838826/tmp.tgz
+21 silly lockFile 064ee518-4065-0-34671313990838826-tmp-tgz tar:///var/folders/xt/z_wwtn6j3819zn5pmq5cb4hc0000gn/T/npm-22530-mAF7y-C5/1401147744065-0.34671313990838826/tmp.tgz
+22 verbose tar unpack /var/folders/xt/z_wwtn6j3819zn5pmq5cb4hc0000gn/T/npm-22530-mAF7y-C5/1401147744065-0.34671313990838826/tmp.tgz
+23 silly lockFile 4d6b0324-4065-0-34671313990838826-package tar:///var/folders/xt/z_wwtn6j3819zn5pmq5cb4hc0000gn/T/npm-22530-mAF7y-C5/1401147744065-0.34671313990838826/package
+24 verbose lock tar:///var/folders/xt/z_wwtn6j3819zn5pmq5cb4hc0000gn/T/npm-22530-mAF7y-C5/1401147744065-0.34671313990838826/package /Users/jhendley25/.npm/4d6b0324-4065-0-34671313990838826-package.lock
+25 silly lockFile 064ee518-4065-0-34671313990838826-tmp-tgz tar:///var/folders/xt/z_wwtn6j3819zn5pmq5cb4hc0000gn/T/npm-22530-mAF7y-C5/1401147744065-0.34671313990838826/tmp.tgz
+26 verbose lock tar:///var/folders/xt/z_wwtn6j3819zn5pmq5cb4hc0000gn/T/npm-22530-mAF7y-C5/1401147744065-0.34671313990838826/tmp.tgz /Users/jhendley25/.npm/064ee518-4065-0-34671313990838826-tmp-tgz.lock
+27 silly gunzTarPerm modes [ '755', '644' ]
+28 silly gunzTarPerm extractEntry package.json
+29 silly gunzTarPerm extractEntry README.md
+30 silly gunzTarPerm extractEntry app/index.js
+31 silly gunzTarPerm extractEntry app/templates/_gulpfileCoffee.js
+32 silly gunzTarPerm extractEntry app/templates/_gulpfileJavascript.js
+33 silly gunzTarPerm extractEntry app/templates/_example.js
+34 silly gunzTarPerm extractEntry app/templates/_main.js
+35 silly gunzTarPerm extractEntry app/templates/_main.coffee
+36 silly gunzTarPerm extractEntry app/templates/_index-js.jade
+37 silly gunzTarPerm extractEntry app/templates/_example.coffee
+38 silly gunzTarPerm extractEntry app/templates/_index-coffee.jade
+39 silly gunzTarPerm extractEntry app/templates/_main.scss
+40 silly gunzTarPerm extractEntry app/templates/_package.json
+41 silly gunzTarPerm extractEntry app/templates/editorconfig
+42 silly gunzTarPerm extractEntry app/templates/gitignore
+43 silly gunzTarPerm extractEntry app/templates/jshintrc
+44 silly lockFile 4d6b0324-4065-0-34671313990838826-package tar:///var/folders/xt/z_wwtn6j3819zn5pmq5cb4hc0000gn/T/npm-22530-mAF7y-C5/1401147744065-0.34671313990838826/package
+45 silly lockFile 4d6b0324-4065-0-34671313990838826-package tar:///var/folders/xt/z_wwtn6j3819zn5pmq5cb4hc0000gn/T/npm-22530-mAF7y-C5/1401147744065-0.34671313990838826/package
+46 silly lockFile 064ee518-4065-0-34671313990838826-tmp-tgz tar:///var/folders/xt/z_wwtn6j3819zn5pmq5cb4hc0000gn/T/npm-22530-mAF7y-C5/1401147744065-0.34671313990838826/tmp.tgz
+47 silly lockFile 064ee518-4065-0-34671313990838826-tmp-tgz tar:///var/folders/xt/z_wwtn6j3819zn5pmq5cb4hc0000gn/T/npm-22530-mAF7y-C5/1401147744065-0.34671313990838826/tmp.tgz
+48 verbose tar pack [ '/Users/jhendley25/.npm/generator-dyno/0.1.0/package.tgz',
+48 verbose tar pack   '/var/folders/xt/z_wwtn6j3819zn5pmq5cb4hc0000gn/T/npm-22530-mAF7y-C5/1401147744065-0.34671313990838826/package' ]
+49 verbose tarball /Users/jhendley25/.npm/generator-dyno/0.1.0/package.tgz
+50 verbose folder /var/folders/xt/z_wwtn6j3819zn5pmq5cb4hc0000gn/T/npm-22530-mAF7y-C5/1401147744065-0.34671313990838826/package
+51 silly lockFile 4d6b0324-4065-0-34671313990838826-package tar:///var/folders/xt/z_wwtn6j3819zn5pmq5cb4hc0000gn/T/npm-22530-mAF7y-C5/1401147744065-0.34671313990838826/package
+52 verbose lock tar:///var/folders/xt/z_wwtn6j3819zn5pmq5cb4hc0000gn/T/npm-22530-mAF7y-C5/1401147744065-0.34671313990838826/package /Users/jhendley25/.npm/4d6b0324-4065-0-34671313990838826-package.lock
+53 silly lockFile 834387a0-generator-dyno-0-1-0-package-tgz tar:///Users/jhendley25/.npm/generator-dyno/0.1.0/package.tgz
+54 verbose lock tar:///Users/jhendley25/.npm/generator-dyno/0.1.0/package.tgz /Users/jhendley25/.npm/834387a0-generator-dyno-0-1-0-package-tgz.lock
+55 silly lockFile 4d6b0324-4065-0-34671313990838826-package tar:///var/folders/xt/z_wwtn6j3819zn5pmq5cb4hc0000gn/T/npm-22530-mAF7y-C5/1401147744065-0.34671313990838826/package
+56 silly lockFile 4d6b0324-4065-0-34671313990838826-package tar:///var/folders/xt/z_wwtn6j3819zn5pmq5cb4hc0000gn/T/npm-22530-mAF7y-C5/1401147744065-0.34671313990838826/package
+57 silly lockFile 834387a0-generator-dyno-0-1-0-package-tgz tar:///Users/jhendley25/.npm/generator-dyno/0.1.0/package.tgz
+58 silly lockFile 834387a0-generator-dyno-0-1-0-package-tgz tar:///Users/jhendley25/.npm/generator-dyno/0.1.0/package.tgz
+59 silly lockFile e5f56a00-npm-generator-dyno-0-1-0-package /Users/jhendley25/.npm/generator-dyno/0.1.0/package
+60 verbose lock /Users/jhendley25/.npm/generator-dyno/0.1.0/package /Users/jhendley25/.npm/e5f56a00-npm-generator-dyno-0-1-0-package.lock
+61 silly lockFile e5f56a00-npm-generator-dyno-0-1-0-package /Users/jhendley25/.npm/generator-dyno/0.1.0/package
+62 silly lockFile e5f56a00-npm-generator-dyno-0-1-0-package /Users/jhendley25/.npm/generator-dyno/0.1.0/package
+63 verbose tar unpack /Users/jhendley25/.npm/generator-dyno/0.1.0/package.tgz
+64 silly lockFile a3da5c0f-npm-generator-dyno-0-1-0-package tar:///Users/jhendley25/.npm/generator-dyno/0.1.0/package
+65 verbose lock tar:///Users/jhendley25/.npm/generator-dyno/0.1.0/package /Users/jhendley25/.npm/a3da5c0f-npm-generator-dyno-0-1-0-package.lock
+66 silly lockFile 834387a0-generator-dyno-0-1-0-package-tgz tar:///Users/jhendley25/.npm/generator-dyno/0.1.0/package.tgz
+67 verbose lock tar:///Users/jhendley25/.npm/generator-dyno/0.1.0/package.tgz /Users/jhendley25/.npm/834387a0-generator-dyno-0-1-0-package-tgz.lock
+68 silly gunzTarPerm modes [ '755', '644' ]
+69 silly gunzTarPerm extractEntry package.json
+70 silly gunzTarPerm extractEntry README.md
+71 silly gunzTarPerm extractEntry app/index.js
+72 silly gunzTarPerm extractEntry app/templates/_gulpfileCoffee.js
+73 silly gunzTarPerm extractEntry app/templates/_gulpfileJavascript.js
+74 silly gunzTarPerm extractEntry app/templates/_example.js
+75 silly gunzTarPerm extractEntry app/templates/_main.js
+76 silly gunzTarPerm extractEntry app/templates/_main.coffee
+77 silly gunzTarPerm extractEntry app/templates/_index-js.jade
+78 silly gunzTarPerm extractEntry app/templates/_example.coffee
+79 silly gunzTarPerm extractEntry app/templates/_index-coffee.jade
+80 silly gunzTarPerm extractEntry app/templates/_main.scss
+81 silly gunzTarPerm extractEntry app/templates/_package.json
+82 silly gunzTarPerm extractEntry app/templates/editorconfig
+83 silly gunzTarPerm extractEntry app/templates/gitignore
+84 silly gunzTarPerm extractEntry app/templates/jshintrc
+85 silly lockFile a3da5c0f-npm-generator-dyno-0-1-0-package tar:///Users/jhendley25/.npm/generator-dyno/0.1.0/package
+86 silly lockFile a3da5c0f-npm-generator-dyno-0-1-0-package tar:///Users/jhendley25/.npm/generator-dyno/0.1.0/package
+87 silly lockFile 834387a0-generator-dyno-0-1-0-package-tgz tar:///Users/jhendley25/.npm/generator-dyno/0.1.0/package.tgz
+88 silly lockFile 834387a0-generator-dyno-0-1-0-package-tgz tar:///Users/jhendley25/.npm/generator-dyno/0.1.0/package.tgz
+89 verbose chmod /Users/jhendley25/.npm/generator-dyno/0.1.0/package.tgz 644
+90 verbose chown /Users/jhendley25/.npm/generator-dyno/0.1.0/package.tgz [ 501, 20 ]
+91 silly lockFile 3a52ce78- .
+92 silly lockFile 3a52ce78- .
+93 silly publish { name: 'generator-dyno',
+93 silly publish   version: '0.1.0',
+93 silly publish   description: 'A Yeoman Generator that gives ya Coffeescript (or Javascript), Browserify, Gulp, and Jade',
+93 silly publish   license: 'MIT',
+93 silly publish   main: 'app/index.js',
+93 silly publish   repository:
+93 silly publish    { type: 'git',
+93 silly publish      url: 'https://github.com/jhendley25/generator-dyno.git' },
+93 silly publish   author:
+93 silly publish    { name: 'Jake',
+93 silly publish      email: 'jhendley25@gmail.com',
+93 silly publish      url: 'https://github.com/jhendley25' },
+93 silly publish   engines: { node: '>=0.10.0' },
+93 silly publish   scripts: { test: 'mocha' },
+93 silly publish   files: [ 'app' ],
+93 silly publish   keywords: [ 'yeoman-generator', 'generator' ],
+93 silly publish   dependencies: { 'yeoman-generator': '~0.16.0', chalk: '~0.4.0' },
+93 silly publish   devDependencies: { mocha: '*' },
+93 silly publish   peerDependencies: { yo: '>=1.0.0' },
+93 silly publish   readme: '# generator-dyno \n\n> [Yeoman](http://yeoman.io) generator\n\n\n## Getting Started\n\n### What is Dyno?\n\nDyno is a Yeoman generator that provides a nice set of defaults for ground-up web development. It scaffolds out a barebones webapp with cool tech:\n[This link](http://example.net/)\n- [Coffeescript](http://coffeescript.org/) (optional, but seriously awesome)\n- [Browserify](http://browserify.org/) for dependency management\n- [Gulp](http://gulpjs.com/) for running tasks\n- [Jade](http://jade-lang.com/) instead of that pesky html\n- [Compass](http://compass-style.org/) and [Sass](http://sass-lang.com/) for styling\n\n### What is Yeoman?\n\nTrick question. It\'s not a thing. It\'s this guy:\n\n![](http://i.imgur.com/JHaAlBJ.png)\n\nBasically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.\n\nNot every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*\n\n```\n$ npm install -g yo\n```\n\n### Yeoman Generators\n\nYeoman travels light. He didn\'t pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.\n\nTo install generator-dyno from npm, run:\n\n```\n$ npm install -g generator-dyno\n```\n\nFinally, initiate the generator:\n\n```\n$ yo dyno\n```\n\nOnce everything is ready, start the local server:\n\n```\n$ gulp\n```\n\n### Getting To Know Yeoman\n\nYeoman has a heart of gold. He\'s a person with feelings and opinions, but he\'s very easy to work with. If you think he\'s too opinionated, he can be easily convinced.\n\nIf you\'d like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).\n\n\n## License\n\nMIT\n',
+93 silly publish   readmeFilename: 'README.md',
+93 silly publish   bugs: { url: 'https://github.com/jhendley25/generator-dyno/issues' },
+93 silly publish   homepage: 'https://github.com/jhendley25/generator-dyno',
+93 silly publish   _id: 'generator-dyno@0.1.0',
+93 silly publish   dist: { shasum: '4df70e8f089a16f5d612f18b2b38e33a7f87a25d' },
+93 silly publish   _from: '.' }
+94 verbose url raw generator-dyno
+95 verbose url resolving [ 'https://registry.npmjs.org/', './generator-dyno' ]
+96 verbose url resolved https://registry.npmjs.org/generator-dyno
+97 info trying registry request attempt 1 at 19:42:24
+98 http PUT https://registry.npmjs.org/generator-dyno
+99 http 403 https://registry.npmjs.org/generator-dyno
+100 error publish Failed PUT 403
+101 error Error: forbidden cannot modify pre-existing version: 0.1.0
+101 error old={"name":"generator-dyno","version":"0.1.0","description":"A Yeoman Generator that gives ya Coffeescript (or Javascript), Browserify, Gulp, and Jade","license":"MIT","main":"app/index.js","repository":{"type":"git","url":"https://github.com/jhendley25/generator-dyno.git"},"author":{"name":"Jake","email":"jhendley25@gmail.com","url":"https://github.com/jhendley25"},"engines":{"node":">=0.10.0"},"scripts":{"test":"mocha"},"files":["app"],"keywords":["yeoman-generator","generator"],"dependencies":{"yeoman-generator":"~0.16.0","chalk":"~0.4.0"},"devDependencies":{"mocha":"*"},"peerDependencies":{"yo":">=1.0.0"},"bugs":{"url":"https://github.com/jhendley25/generator-dyno/issues"},"homepage":"https://github.com/jhendley25/generator-dyno","_id":"generator-dyno@0.1.0","dist":{"shasum":"1178bad384a058f02eff71a612c421960a917549","tarball":"http://registry.npmjs.org/generator-dyno/-/generator-dyno-0.1.0.tgz"},"_from":".","_npmVersion":"1.4.3","_npmUser":{"name":"jhendley25","email":"jhendley25@gmail.com"},"maintainers":[{"name":"jhendley25","email":"jhendley25@gmail.com"}]}
+101 error new={"name":"generator-dyno","version":"0.1.0","description":"A Yeoman Generator that gives ya Coffeescript (or Javascript), Browserify, Gulp, and Jade","license":"MIT","main":"app/index.js","repository":{"type":"git","url":"https://github.com/jhendley25/generator-dyno.git"},"author":{"name":"Jake","email":"jhendley25@gmail.com","url":"https://github.com/jhendley25"},"engines":{"node":">=0.10.0"},"scripts":{"test":"mocha"},"files":["app"],"keywords":["yeoman-generator","generator"],"dependencies":{"yeoman-generator":"~0.16.0","chalk":"~0.4.0"},"devDependencies":{"mocha":"*"},"peerDependencies":{"yo":">=1.0.0"},"readme":"# generator-dyno \u000a\u000a> [Yeoman](http://yeoman.io) generator\u000a\u000a\u000a## Getting Started\u000a\u000a### What is Dyno?\u000a\u000aDyno is a Yeoman generator that provides a nice set of defaults for ground-up web development. It scaffolds out a barebones webapp with cool tech:\u000a[This link](http://example.net/)\u000a- [Coffeescript](http://coffeescript.org/) (optional, but seriously awesome)\u000a- [Browserify](http://browserify.org/) for dependency management\u000a- [Gulp](http://gulpjs.com/) for running tasks\u000a- [Jade](http://jade-lang.com/) instead of that pesky html\u000a- [Compass](http://compass-style.org/) and [Sass](http://sass-lang.com/) for styling\u000a\u000a### What is Yeoman?\u000a\u000aTrick question. It's not a thing. It's this guy:\u000a\u000a![](http://i.imgur.com/JHaAlBJ.png)\u000a\u000aBasically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.\u000a\u000aNot every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*\u000a\u000a```\u000a$ npm install -g yo\u000a```\u000a\u000a### Yeoman Generators\u000a\u000aYeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.\u000a\u000aTo install generator-dyno from npm, run:\u000a\u000a```\u000a$ npm install -g generator-dyno\u000a```\u000a\u000aFinally, initiate the generator:\u000a\u000a```\u000a$ yo dyno\u000a```\u000a\u000aOnce everything is ready, start the local server:\u000a\u000a```\u000a$ gulp\u000a```\u000a\u000a### Getting To Know Yeoman\u000a\u000aYeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.\u000a\u000aIf you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).\u000a\u000a\u000a## License\u000a\u000aMIT\u000a","readmeFilename":"README.md","bugs":{"url":"https://github.com/jhendley25/generator-dyno/issues"},"homepage":"https://github.com/jhendley25/generator-dyno","_id":"generator-dyno@0.1.0","dist":{"shasum":"4df70e8f089a16f5d612f18b2b38e33a7f87a25d","tarball":"http://registry.npmjs.org/generator-dyno/-/generator-dyno-0.1.0.tgz"},"_from":".","_npmVersion":"1.4.3","_npmUser":{"name":"jhendley25","email":"jhendley25@gmail.com"},"maintainers":[{"name":"jhendley25","email":"jhendley25@gmail.com"}]}: generator-dyno
+101 error     at RegClient.<anonymous> (/usr/local/Cellar/node/0.10.26/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:237:14)
+101 error     at Request.self.callback (/usr/local/Cellar/node/0.10.26/lib/node_modules/npm/node_modules/request/request.js:123:22)
+101 error     at Request.EventEmitter.emit (events.js:98:17)
+101 error     at Request.<anonymous> (/usr/local/Cellar/node/0.10.26/lib/node_modules/npm/node_modules/request/request.js:893:14)
+101 error     at Request.EventEmitter.emit (events.js:117:20)
+101 error     at IncomingMessage.<anonymous> (/usr/local/Cellar/node/0.10.26/lib/node_modules/npm/node_modules/request/request.js:844:12)
+101 error     at IncomingMessage.EventEmitter.emit (events.js:117:20)
+101 error     at _stream_readable.js:920:16
+101 error     at process._tickCallback (node.js:415:13)
+102 error If you need help, you may report this *entire* log,
+102 error including the npm and node versions, at:
+102 error     <http://github.com/npm/npm/issues>
+103 error System Darwin 13.1.0
+104 error command "/usr/local/Cellar/node/0.10.26/bin/node" "/usr/local/bin/npm" "publish"
+105 error cwd /Users/jhendley25/projects/generator-dyno
+106 error node -v v0.10.26
+107 error npm -v 1.4.3
+108 verbose exit [ 1, true ]
