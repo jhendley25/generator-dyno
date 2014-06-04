@@ -60,7 +60,9 @@ var DynoGenerator = yeoman.generators.Base.extend({
     this.mkdir('src/stylesheets');
     this.template('_main.scss', 'src/stylesheets/main.scss')
 
-    this.copy('_package.json', 'package.json');
+    this.template('_package.json', 'package.json');
+    this.template('_bower.json', 'bower.json');
+    this.copy('_bowerrc', '.bowerrc');
     this.copy('gitignore', '.gitignore');
   },
 

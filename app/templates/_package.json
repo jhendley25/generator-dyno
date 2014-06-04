@@ -1,5 +1,5 @@
 {
-  "name": "package",
+  "name": "<%= _.slugify(appname) %>",
   "version": "0.0.0",
   "dependencies": {
     "gulp-concat": "~2.1.7",
