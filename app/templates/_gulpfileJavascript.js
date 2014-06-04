@@ -13,10 +13,12 @@ var gulp        = require('gulp'),
     path        = require('path'),
     rename      = require('gulp-rename'),
     browserify  = require('gulp-browserify'),
+    plumber     = require('gulp-plumber'),
     server      = tinylr();
 
 gulp.task('compass', function() {
-    return gulp.src('./src/stylesheets/*.scss')
+    gulp.src('./src/stylesheets/*.scss')
+        .pipe(plumber())
         .pipe(compass({
             css: 'dist/stylesheets',
             sass: 'src/stylesheets'
@@ -28,7 +30,10 @@ gulp.task('compass', function() {
 
 gulp.task('js', function() {
   return gulp.src('src/scripts/*.js')
-    .pipe( browserify() )
+    .pipe(plumber())
+    .pipe( browserify({
+      debug: true
+    }))
     .pipe( uglify() )
     .pipe( rename('app.js'))
     .pipe( gulp.dest('dist/scripts/'))
@@ -42,6 +47,7 @@ gulp.task('images', function() {
 
 gulp.task('templates', function() {
   return gulp.src('src/*.jade')
+    .pipe(plumber())
     .pipe(jade({
       pretty: true
     }))

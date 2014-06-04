@@ -14,10 +14,12 @@ var gulp        = require('gulp'),
     path        = require('path'),
     rename      = require('gulp-rename'),
     browserify  = require('gulp-browserify'),
+    plumber     = require('gulp-plumber'),
     server      = tinylr();
 
 gulp.task('compass', function() {
     gulp.src('./src/stylesheets/*.scss')
+        .pipe(plumber())
         .pipe(compass({
             css: 'dist/stylesheets',
             sass: 'src/stylesheets'
@@ -29,7 +31,10 @@ gulp.task('compass', function() {
 
 gulp.task('coffee', function() {
   return gulp.src('src/scripts/main.coffee', { read: false })
+    .pipe(plumber())
     .pipe(browserify({
+      debug: true,
+      insertGlobals: false,
       transform: ['coffeeify'],
       extensions: ['.coffee']
     }))
@@ -45,6 +50,7 @@ gulp.task('images', function() {
 
 gulp.task('templates', function() {
   return gulp.src('src/*.jade')
+    .pipe(plumber())
     .pipe(jade({
       pretty: true
     }))
