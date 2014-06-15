@@ -1,11 +1,11 @@
 var gulp            = require('gulp'),
     // this is an arbitrary object that loads all gulp plugins in package.json. 
-    $ = require("gulp-load-plugins")(),
-    express = require('express'),
-    path = require('path'),
-    tinylr = require('tiny-lr'),
-    app             = express(),
-    server          = tinylr();
+    $         = require("gulp-load-plugins")(),
+    express   = require('express'),
+    path      = require('path'),
+    tinylr    = require('tiny-lr'),
+    app       = express(),
+    server    = tinylr();
 
 gulp.task('compass', function() {
     gulp.src('./src/stylesheets/*.scss')
