@@ -1,46 +1,35 @@
-var gulp        = require('gulp'),
-    gutil       = require('gulp-util'),
-    sass        = require('gulp-sass'),
-    compass     = require('gulp-compass'),
-    minifyCSS   = require('gulp-minify-css'),
-    uglify      = require('gulp-uglify'),
-    jade        = require('gulp-jade'),
-    concat      = require('gulp-concat'),
-    livereload  = require('gulp-livereload'), // Livereload plugin needed: https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei
-    tinylr      = require('tiny-lr'),
-    express     = require('express'),
-    app         = express(),
-    marked      = require('marked'),
-    path        = require('path'),
-    rename      = require('gulp-rename'),
-    browserify  = require('gulp-browserify'),
-    plumber     = require('gulp-plumber'),
-    server      = tinylr();
+var gulp            = require('gulp'),
+    // this is an arbitrary object that loads all gulp plugins in package.json. 
+    $ = require("gulp-load-plugins")(),
+    express = require('express'),
+    path = require('path'),
+    tinylr = require('tiny-lr'),
+    app             = express(),
+    server          = tinylr();
 
 gulp.task('compass', function() {
     gulp.src('./src/stylesheets/*.scss')
-        .pipe(plumber())
-        .pipe(compass({
+        .pipe($.plumber())
+        .pipe($.compass({
             css: 'dist/stylesheets',
             sass: 'src/stylesheets'
         }))
-        .pipe(minifyCSS())
         .pipe(gulp.dest('dist/stylesheets'))
-        .pipe( livereload( server ));
+        .pipe( $.livereload( server ));
 });
 
 gulp.task('coffee', function() {
   return gulp.src('src/scripts/main.coffee', { read: false })
-    .pipe(plumber())
-    .pipe(browserify({
+    .pipe($.plumber())
+    .pipe($.browserify({
       debug: true,
       insertGlobals: false,
       transform: ['coffeeify'],
       extensions: ['.coffee']
     }))
-    .pipe( rename('app.js') )
+    .pipe( $.rename('app.js') )
     .pipe( gulp.dest('dist/scripts') )
-    .pipe( livereload( server ) );
+    .pipe( $.livereload( server ) );
 });
 
 gulp.task('images', function() {
@@ -50,18 +39,18 @@ gulp.task('images', function() {
 
 gulp.task('templates', function() {
   return gulp.src('src/*.jade')
-    .pipe(plumber())
-    .pipe(jade({
+    .pipe($.plumber())
+    .pipe($.jade({
       pretty: true
     }))
     .pipe( gulp.dest('dist/') )
-    .pipe( livereload( server ));
+    .pipe( $.livereload( server ));
 });
 
 gulp.task('express', function() {
   app.use(express.static(path.resolve('./dist')));
   app.listen(1337);
-  gutil.log('Listening on port: 1337');
+  $.util.log('Listening on port: 1337');
 });
 
 gulp.task('watch', function () {
