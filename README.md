@@ -11,6 +11,7 @@ Dyno is a Yeoman generator that provides a nice set of defaults for ground-up we
 - [Coffeescript](http://coffeescript.org/) (optional, but seriously awesome)
 - [Browserify](http://browserify.org/) for dependency management
 - [Gulp](http://gulpjs.com/) for running tasks
+- [BrowserSync](http://browsersync.io/) for keeping things in sync while developing
 - [Jade](http://jade-lang.com/) instead of that pesky html
 - [Compass](http://compass-style.org/) and [Sass](http://sass-lang.com/) for styling
 
