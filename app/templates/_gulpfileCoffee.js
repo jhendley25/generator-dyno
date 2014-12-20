@@ -1,21 +1,27 @@
 var gulp            = require('gulp'),
     // this is an arbitrary object that loads all gulp plugins in package.json. 
-    $         = require("gulp-load-plugins")(),
-    express   = require('express'),
-    path      = require('path'),
-    tinylr    = require('tiny-lr'),
-    app       = express(),
-    server    = tinylr();
+    $           = require("gulp-load-plugins")(),
+    path        = require('path'),
+    browserSync = require('browser-sync'),
+    reload      = browserSync.reload,
+    sass        = require('gulp-sass');
+
+gulp.task('browser-sync', function() {
+  browserSync({
+    server: {
+      baseDir: "./dist"
+    }
+  });
+});
 
 gulp.task('compass', function() {
-    gulp.src('./src/stylesheets/*.scss')
+    return gulp.src('./src/stylesheets/*.scss')
         .pipe($.plumber())
         .pipe($.compass({
             css: 'dist/stylesheets',
             sass: 'src/stylesheets'
         }))
-        .pipe(gulp.dest('dist/stylesheets'))
-        .pipe( $.livereload( server ));
+        .pipe(gulp.dest('dist/stylesheets'));
 });
 
 gulp.task('coffee', function() {
@@ -28,8 +34,7 @@ gulp.task('coffee', function() {
       extensions: ['.coffee']
     }))
     .pipe( $.rename('app.js') )
-    .pipe( gulp.dest('dist/scripts') )
-    .pipe( $.livereload( server ) );
+    .pipe( gulp.dest('dist/scripts') );
 });
 
 gulp.task('images', function() {
@@ -44,29 +49,16 @@ gulp.task('templates', function() {
       pretty: true
     }))
     .pipe( gulp.dest('dist/') )
-    .pipe( $.livereload( server ));
 });
 
-gulp.task('express', function() {
-  app.use(express.static(path.resolve('./dist')));
-  app.listen(1337);
-  $.util.log('Listening on port: 1337');
-});
+gulp.task('default',['compass','coffee','templates','browser-sync'], function () {
+  
+  gulp.watch('src/stylesheets/*.scss',['compass', reload]);
 
-gulp.task('watch', function () {
-  server.listen(35729, function (err) {
-    if (err) {
-      return console.log(err);
-    }
+  gulp.watch('src/scripts/*.coffee',['coffee', reload]);
 
-    gulp.watch('src/stylesheets/*.scss',['compass']);
-
-    gulp.watch('src/scripts/*.coffee',['coffee']);
-
-    gulp.watch('src/*.jade',['templates']);
+  gulp.watch('src/*.jade',['templates', reload]);
     
-  });
 });
 
-// Default Task
-gulp.task('default', ['coffee','compass','templates', 'images', 'express','watch']);
+

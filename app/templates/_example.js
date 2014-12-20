@@ -1,1 +1,3 @@
-console.log('Dyno!')
+exports.welcome = function(){
+  console.log("Dyno!")
+}
