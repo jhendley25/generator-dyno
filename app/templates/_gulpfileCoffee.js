@@ -51,11 +51,13 @@ gulp.task('templates', function() {
     .pipe( gulp.dest('dist/') )
 });
 
-gulp.task('default',['compass','coffee','templates','browser-sync'], function () {
+gulp.task('default',['compass','coffee','images','templates','browser-sync'], function () {
   
   gulp.watch('src/stylesheets/*.scss',['compass', reload]);
 
   gulp.watch('src/scripts/*.coffee',['coffee', reload]);
+  
+  gulp.watch('src/images/**/*',['images', reload]);
 
   gulp.watch('src/*.jade',['templates', reload]);
     
