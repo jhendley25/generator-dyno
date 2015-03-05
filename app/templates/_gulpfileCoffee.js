@@ -4,7 +4,7 @@ var gulp            = require('gulp'),
     path        = require('path'),
     browserSync = require('browser-sync'),
     reload      = browserSync.reload,
-    sass        = require('gulp-sass'),
+    sass        = require('gulp-sass');
 
 gulp.task('browser-sync', function() {
   browserSync({
