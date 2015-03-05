@@ -1,4 +1,4 @@
-# generator-dyno 
+# generator-dyno
 
 > [Yeoman](http://yeoman.io) generator
 
@@ -48,7 +48,13 @@ $ yo dyno
 Once everything is ready, start the local server:
 
 ```
-$ gulp
+$ gulp serve
+```
+
+If you are ready to deploy the code you have written just build the code using:
+
+```
+$ gulp build
 ```
 
 ### Getting To Know Yeoman
