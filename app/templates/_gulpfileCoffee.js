@@ -39,6 +39,9 @@ gulp.task('coffee', function() {
 
 gulp.task('images', function() {
   return gulp.src('./src/images/*')
+    .pipe($.imagemin({
+      progressive: true
+    }))
     .pipe(gulp.dest('./dist/images'))
 })
 
