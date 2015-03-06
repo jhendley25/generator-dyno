@@ -58,7 +58,7 @@ gulp.task('build', ['compass', 'coffee', 'templates', 'images']);
 
 gulp.task('serve', ['build', 'browser-sync'], function () {
   gulp.watch('src/stylesheets/*.scss',['compass', reload]);
-  gulp.watch('src/scripts/*.js',['js', reload]);
+  gulp.watch('src/scripts/*.coffee',['coffee', reload]);
   gulp.watch('src/images/**/*',['images', reload]);
   gulp.watch('src/*.jade',['templates', reload]);
 });
