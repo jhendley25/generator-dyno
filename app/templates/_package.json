@@ -1,7 +1,7 @@
 {
   "name": "<%= _.slugify(appname) %>",
   "version": "0.0.0",
-  "dependencies": {
+  "devDependencies": {
     "browser-sync": "^1.8.1",
     "browserify": "^3.41.0",
     "coffeeify": "^0.6.0",
@@ -17,6 +17,6 @@
     "gulp-sass": "~0.4.1",
     "gulp-uglify": "~0.1.0",
     "gulp-util": "~2.2.12",
-    "marked": "~0.3.0"  
+    "marked": "~0.3.0"
   }
 }

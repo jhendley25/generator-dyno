@@ -1,5 +1,5 @@
 var gulp            = require('gulp'),
-    // this is an arbitrary object that loads all gulp plugins in package.json. 
+    // this is an arbitrary object that loads all gulp plugins in package.json.
     $           = require("gulp-load-plugins")(),
     path        = require('path'),
     browserSync = require('browser-sync'),
@@ -15,13 +15,13 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('compass', function() {
-    return gulp.src('./src/stylesheets/*.scss')
-        .pipe($.plumber())
-        .pipe($.compass({
-            css: 'dist/stylesheets',
-            sass: 'src/stylesheets'
-        }))
-        .pipe(gulp.dest('dist/stylesheets'));
+  return gulp.src('./src/stylesheets/*.scss')
+    .pipe($.plumber())
+    .pipe($.compass({
+      css: 'dist/stylesheets',
+      sass: 'src/stylesheets'
+    }))
+    .pipe(gulp.dest('dist/stylesheets'));
 });
 
 gulp.task('coffee', function() {
@@ -39,6 +39,9 @@ gulp.task('coffee', function() {
 
 gulp.task('images', function() {
   return gulp.src('./src/images/*')
+    .pipe($.imagemin({
+      progressive: true
+    }))
     .pipe(gulp.dest('./dist/images'))
 })
 
@@ -51,16 +54,13 @@ gulp.task('templates', function() {
     .pipe( gulp.dest('dist/') )
 });
 
-gulp.task('default',['compass','coffee','images','templates','browser-sync'], function () {
-  
+gulp.task('build', ['compass', 'js', 'templates', 'images']);
+
+gulp.task('serve', ['build', 'browser-sync'], function () {
   gulp.watch('src/stylesheets/*.scss',['compass', reload]);
-
-  gulp.watch('src/scripts/*.coffee',['coffee', reload]);
-  
+  gulp.watch('src/scripts/*.js',['js', reload]);
   gulp.watch('src/images/**/*',['images', reload]);
-
   gulp.watch('src/*.jade',['templates', reload]);
-    
 });
 
-
+gulp.task('default', ['serve']);
