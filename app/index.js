@@ -19,21 +19,24 @@ var DynoGenerator = yeoman.generators.Base.extend({
   askFor: function () {
     var done = this.async();
 
-    // have Yeoman greet the user
     this.log(this.yeoman);
-
-    // replace it with a short and sweet description of your generator
     this.log(chalk.magenta('You\'re using the fantastic Dyno generator: \n Coffeescript, Jade Templates, Browserify, and Gulp'));
 
     var prompts = [{
       type: 'confirm',
-      name: 'coffescriptOption',
-      message: 'Would you like to Include Coffeescript?',
+      name: 'coffeescriptOption',
+      message: 'Would you like to include Coffeescript?',
+      default: true
+    }, {
+      type: 'confirm',
+      name: 'bowerOption',
+      message: 'Would you like to include Bower for dependency management?',
       default: true
     }];
 
     this.prompt(prompts, function (props) {
-      this.coffescriptOption = props.coffescriptOption;
+      this.coffeescriptOption = props.coffeescriptOption;
+      this.bowerOption = props.bowerOption;
 
       done();
     }.bind(this));
@@ -43,7 +46,7 @@ var DynoGenerator = yeoman.generators.Base.extend({
     this.mkdir('src');
     this.mkdir('src/scripts');
 
-    if (!this.coffescriptOption) {
+    if (!this.coffeescriptOption) {
       this.template('_main.js', 'src/scripts/main.js')
       this.template('_example.js', 'src/scripts/example.js')
       this.copy('_gulpfileJavascript.js', 'gulpfile.js');
@@ -54,15 +57,18 @@ var DynoGenerator = yeoman.generators.Base.extend({
       this.copy('_gulpfileCoffee.js', 'gulpfile.js');
       this.template('_index-coffee.jade', 'src/index.jade')
     }
-    
+
     this.mkdir('src/images');
 
     this.mkdir('src/stylesheets');
     this.template('_main.scss', 'src/stylesheets/main.scss')
 
     this.template('_package.json', 'package.json');
-    this.template('_bower.json', 'bower.json');
-    this.copy('_bowerrc', '.bowerrc');
+
+    if(this.bowerOption) {
+      this.template('_bower.json', 'bower.json');
+      this.copy('_bowerrc', '.bowerrc');
+    }
     this.copy('gitignore', '.gitignore');
   },
 
