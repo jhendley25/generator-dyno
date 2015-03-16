@@ -5,6 +5,7 @@ var gulp            = require('gulp'),
     browserSync = require('browser-sync'),
     reload      = browserSync.reload,
     sass        = require('gulp-sass');
+    del         = require('del');
 
 gulp.task('browser-sync', function() {
   browserSync({
@@ -35,6 +36,10 @@ gulp.task('coffee', function() {
     }))
     .pipe( $.rename('app.js') )
     .pipe( gulp.dest('dist/scripts') );
+});
+
+gulp.task('clean', function(cb) {
+  del('./dist', cb);
 });
 
 gulp.task('images', function() {
