@@ -59,6 +59,7 @@ var DynoGenerator = yeoman.generators.Base.extend({
     }
 
     this.mkdir('src/images');
+    this.copy('dyno-logo.png', 'src/images/dyno-logo.png')
 
     this.mkdir('src/stylesheets');
     this.template('_main.scss', 'src/stylesheets/main.scss')
