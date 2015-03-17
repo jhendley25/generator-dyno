@@ -1,5 +1,6 @@
-![generator-dyno](dyno-logo.png "Dyno")
-
+<p align="center">
+  <img src="https://github.com/jhendley25/generator-dyno/raw/master/dyno-logo.png" alt="generator-dyno"/>
+</p>
 
 ## Getting Started
 
