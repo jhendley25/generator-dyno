@@ -49,15 +49,14 @@ var DynoGenerator = yeoman.generators.Base.extend({
     if (!this.coffeescriptOption) {
       this.template('_main.js', 'src/scripts/main.js')
       this.template('_example.js', 'src/scripts/example.js')
-      this.copy('_gulpfileJavascript.js', 'gulpfile.js');
       this.template('_index-js.jade', 'src/index.jade')
     } else {
       this.template('_main.coffee', 'src/scripts/main.coffee')
       this.template('_example.coffee', 'src/scripts/example.coffee')
-      this.copy('_gulpfileCoffee.js', 'gulpfile.js');
       this.template('_index-coffee.jade', 'src/index.jade')
     }
 
+    this.copy('_gulpfile.js', 'gulpfile.js');
     this.mkdir('src/images');
     this.copy('dyno-logo.png', 'src/images/dyno-logo.png')
 

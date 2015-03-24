@@ -1,6 +1,6 @@
 var gulp            = require('gulp'),
     // this is an arbitrary object that loads all gulp plugins in package.json.
-    $           = require("gulp-load-plugins")(),
+    $           = require('gulp-load-plugins')(),
     path        = require('path'),
     browserSync = require('browser-sync'),
     reload      = browserSync.reload,
@@ -24,6 +24,7 @@ gulp.task('compass', function() {
     .pipe(gulp.dest('dist/stylesheets'));
 });
 
+<% if (coffeescriptOption) { %>
 gulp.task('coffee', function() {
   return gulp.src('src/scripts/main.coffee', { read: false })
     .pipe($.plumber())
@@ -36,6 +37,18 @@ gulp.task('coffee', function() {
     .pipe( $.rename('app.js') )
     .pipe( gulp.dest('dist/scripts') );
 });
+<% } else { %>
+  gulp.task('js', function() {
+    return gulp.src('src/scripts/*.js')
+      .pipe($.plumber())
+      .pipe( $.browserify({
+        debug: true
+      }))
+      .pipe( $.uglify() )
+      .pipe( $.rename('app.js'))
+      .pipe( gulp.dest('dist/scripts/'));
+  });
+<% } %>
 
 gulp.task('clean', function(cb) {
   del('./dist', cb);
@@ -58,11 +71,19 @@ gulp.task('templates', function() {
     .pipe( gulp.dest('dist/') )
 });
 
+<% if (coffeescriptOption) { %>
 gulp.task('build', ['compass', 'coffee', 'templates', 'images']);
+<% } else { %>
+gulp.task('build', ['compass', 'js', 'templates', 'images']);
+<% } %>
 
 gulp.task('serve', ['build', 'browser-sync'], function () {
   gulp.watch('src/stylesheets/*.scss',['compass', reload]);
+<% if (coffeescriptOption) { %>
   gulp.watch('src/scripts/*.coffee',['coffee', reload]);
+<% } else { %>
+  gulp.watch('src/scripts/*.js',['js', reload]);
+<% } %>
   gulp.watch('src/images/**/*',['images', reload]);
   gulp.watch('src/*.jade',['templates', reload]);
 });
