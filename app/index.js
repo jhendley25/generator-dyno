@@ -69,22 +69,21 @@ var DynoGenerator = yeoman.generators.Base.extend({
     mkdirp('src/scripts');
 
     if (!this.coffeescriptOption) {
-      this.template('_main.js', 'src/scripts/main.js')
-      this.template('_example.js', 'src/scripts/example.js')
-      this.template('_index-js.jade', 'src/index.jade')
+      this.template('_main.js', 'src/scripts/main.js');
+      this.template('_example.js', 'src/scripts/example.js');
     } else {
-      this.template('_main.coffee', 'src/scripts/main.coffee')
-      this.template('_example.coffee', 'src/scripts/example.coffee')
-      this.template('_index-coffee.jade', 'src/index.jade')
+      this.template('_main.coffee', 'src/scripts/main.coffee');
+      this.template('_example.coffee', 'src/scripts/example.coffee');
     }
 
     this.template('_index.'+this.templateOption, 'src/index.'+this.templateOption);
     this.copy('_gulpfile.js', 'gulpfile.js');
-    this.copy('dyno-logo.png', 'src/images/dyno-logo.png')
 
-    this.template('_main.scss', 'src/stylesheets/main.scss')
     mkdirp('src/images');
+    this.copy('dyno-logo.png', 'src/images/dyno-logo.png');
+
     mkdirp('src/stylesheets');
+    this.template('_main.scss', 'src/stylesheets/main.scss');
 
     this.template('_package.json', 'package.json');
 
