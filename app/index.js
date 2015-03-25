@@ -4,6 +4,7 @@ var path = require('path');
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 
+var semverRegex = require('semver-regex');
 
 var DynoGenerator = yeoman.generators.Base.extend({
   init: function () {
@@ -24,6 +25,18 @@ var DynoGenerator = yeoman.generators.Base.extend({
     this.log(chalk.magenta('You\'re using the fantastic Dyno generator: \n Coffeescript, Jade Templates, Browserify, and Gulp'));
 
     var prompts = [{
+      type: 'input',
+      name: 'projectName',
+      message: 'What\'s the name of the project?'
+    }, {
+      type: 'input',
+      name: 'projectVersion',
+      message: 'What\'s the version of the project? (SemVer)',
+      default: '0.0.1',
+      validate: function (value) {
+        return semverRegex().test(value);
+      }
+    }, {
       type: 'confirm',
       name: 'coffeescriptOption',
       message: 'Would you like to include Coffeescript?',

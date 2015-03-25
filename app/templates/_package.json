@@ -1,6 +1,6 @@
 {
-  "name": "<%= _.slugify(appname) %>",
-  "version": "0.0.0",
+  "name": "<%= _.slugify(projectName) %>",
+  "version": "<%= projectVersion %>",
   "devDependencies": {
     "browser-sync": "^1.8.1",
     "browserify": "^3.41.0",
