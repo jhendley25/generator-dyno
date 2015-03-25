@@ -75,18 +75,13 @@ gulp.task('images', function() {
     .pipe( gulp.dest('dist/') )
 });<% } %>
 <% if (coffeescriptOption) { %>
-gulp.task('build', ['compass', 'coffee', 'templates', 'images']);
-<% } else { %>
-gulp.task('build', ['compass', 'js', 'templates', 'images']);
-<% } %>
+gulp.task('build', ['compass', 'coffee', 'templates', 'images']);<% } else { %>
+gulp.task('build', ['compass', 'js', 'templates', 'images']);<% } %>
 
 gulp.task('serve', ['build', 'browser-sync'], function () {
-  gulp.watch('src/stylesheets/*.scss',['compass', reload]);
-<% if (coffeescriptOption) { %>
-  gulp.watch('src/scripts/*.coffee',['coffee', reload]);
-<% } else { %>
-  gulp.watch('src/scripts/*.js',['js', reload]);
-<% } %>
+  gulp.watch('src/stylesheets/*.scss',['compass', reload]);<% if (coffeescriptOption) { %>
+  gulp.watch('src/scripts/*.coffee',['coffee', reload]);<% } else { %>
+  gulp.watch('src/scripts/*.js',['js', reload]);<% } %>
   gulp.watch('src/images/**/*',['images', reload]);
   <% if (templateOption == 'jade') { %>gulp.watch('src/*.jade',['templates', reload]);<% } else { %>gulp.watch('src/*.html',['templates', reload]);<% } %>
 });
