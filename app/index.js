@@ -57,8 +57,11 @@ var DynoGenerator = yeoman.generators.Base.extend({
     }];
 
     this.prompt(prompts, function (props) {
+      this.projectName = this._.str.camelize(props.projectName, true);
+      this.projectVersion = props.projectVersion;
       this.coffeescriptOption = props.coffeescriptOption;
       this.bowerOption = props.bowerOption;
+      this.templateOption = props.templateOption;
 
       done();
     }.bind(this));
