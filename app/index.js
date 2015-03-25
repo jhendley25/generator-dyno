@@ -3,7 +3,7 @@ var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
-
+var mkdirp = require('mkdirp');
 var semverRegex = require('semver-regex');
 
 var DynoGenerator = yeoman.generators.Base.extend({
@@ -65,8 +65,8 @@ var DynoGenerator = yeoman.generators.Base.extend({
   },
 
   app: function () {
-    this.mkdir('src');
-    this.mkdir('src/scripts');
+    mkdirp('src');
+    mkdirp('src/scripts');
 
     if (!this.coffeescriptOption) {
       this.template('_main.js', 'src/scripts/main.js')
@@ -80,11 +80,11 @@ var DynoGenerator = yeoman.generators.Base.extend({
 
     this.template('_index.'+this.templateOption, 'src/index.'+this.templateOption);
     this.copy('_gulpfile.js', 'gulpfile.js');
-    this.mkdir('src/images');
     this.copy('dyno-logo.png', 'src/images/dyno-logo.png')
 
-    this.mkdir('src/stylesheets');
     this.template('_main.scss', 'src/stylesheets/main.scss')
+    mkdirp('src/images');
+    mkdirp('src/stylesheets');
 
     this.template('_package.json', 'package.json');
 
