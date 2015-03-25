@@ -46,6 +46,14 @@ var DynoGenerator = yeoman.generators.Base.extend({
       name: 'bowerOption',
       message: 'Would you like to include Bower for dependency management?',
       default: true
+    }, {
+      type: 'list',
+      name: 'templateOption',
+      message: 'What would you like to use for templating?',
+      choices: [
+        { name: 'Pure HTML', value: 'html' },
+        { name: 'Jade', value: 'jade' }
+      ]
     }];
 
     this.prompt(prompts, function (props) {
@@ -70,6 +78,7 @@ var DynoGenerator = yeoman.generators.Base.extend({
       this.template('_index-coffee.jade', 'src/index.jade')
     }
 
+    this.template('_index.'+this.templateOption, 'src/index.'+this.templateOption);
     this.copy('_gulpfile.js', 'gulpfile.js');
     this.mkdir('src/images');
     this.copy('dyno-logo.png', 'src/images/dyno-logo.png')

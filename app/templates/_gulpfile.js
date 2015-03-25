@@ -62,15 +62,18 @@ gulp.task('images', function() {
     .pipe(gulp.dest('./dist/images'))
 })
 
-gulp.task('templates', function() {
+<% if (templateOption == 'jade') { %>gulp.task('templates', function() {
   return gulp.src('src/*.jade')
     .pipe($.plumber())
     .pipe($.jade({
       pretty: true
     }))
     .pipe( gulp.dest('dist/') )
-});
-
+});<% } else { %>gulp.task('templates', function() {
+  return gulp.src('src/*.html')
+    .pipe($.plumber())
+    .pipe( gulp.dest('dist/') )
+});<% } %>
 <% if (coffeescriptOption) { %>
 gulp.task('build', ['compass', 'coffee', 'templates', 'images']);
 <% } else { %>
@@ -85,7 +88,7 @@ gulp.task('serve', ['build', 'browser-sync'], function () {
   gulp.watch('src/scripts/*.js',['js', reload]);
 <% } %>
   gulp.watch('src/images/**/*',['images', reload]);
-  gulp.watch('src/*.jade',['templates', reload]);
+  <% if (templateOption == 'jade') { %>gulp.watch('src/*.jade',['templates', reload]);<% } else { %>gulp.watch('src/*.html',['templates', reload]);<% } %>
 });
 
 gulp.task('default', ['serve']);
