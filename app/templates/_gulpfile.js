@@ -15,7 +15,7 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('compass', function() {
-  return gulp.src('./src/stylesheets/*.scss')
+  return gulp.src('./src/stylesheets/*.{scss,sass}')
     .pipe($.plumber())
     .pipe($.compass({
       css: 'dist/stylesheets',
@@ -79,7 +79,7 @@ gulp.task('build', ['compass', 'coffee', 'templates', 'images']);<% } else { %>
 gulp.task('build', ['compass', 'js', 'templates', 'images']);<% } %>
 
 gulp.task('serve', ['build', 'browser-sync'], function () {
-  gulp.watch('src/stylesheets/*.scss',['compass', reload]);<% if (coffeescriptOption) { %>
+  gulp.watch('src/stylesheets/*.{scss,sass}',['compass', reload]);<% if (coffeescriptOption) { %>
   gulp.watch('src/scripts/*.coffee',['coffee', reload]);<% } else { %>
   gulp.watch('src/scripts/*.js',['js', reload]);<% } %>
   gulp.watch('src/images/**/*',['images', reload]);

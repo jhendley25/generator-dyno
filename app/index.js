@@ -48,6 +48,14 @@ var DynoGenerator = yeoman.generators.Base.extend({
       default: true
     }, {
       type: 'list',
+      name: 'styleOption',
+      message: 'What css preprocessor do you want to use?',
+      choices: [
+        { name: 'Sass', value: 'sass' },
+        { name: 'SCSS', value: 'scss' }
+      ]
+    }, {
+      type: 'list',
       name: 'templateOption',
       message: 'What would you like to use for templating?',
       choices: [
@@ -62,6 +70,7 @@ var DynoGenerator = yeoman.generators.Base.extend({
       this.coffeescriptOption = props.coffeescriptOption;
       this.bowerOption = props.bowerOption;
       this.templateOption = props.templateOption;
+      this.styleOption = props.styleOption;
 
       done();
     }.bind(this));
@@ -86,7 +95,7 @@ var DynoGenerator = yeoman.generators.Base.extend({
     this.copy('dyno-logo.png', 'src/images/dyno-logo.png');
 
     mkdirp('src/stylesheets');
-    this.template('_main.scss', 'src/stylesheets/main.scss');
+    this.template('_main.'+this.styleOption, 'src/stylesheets/main.'+this.styleOption);
 
     this.template('_package.json', 'package.json');
 
