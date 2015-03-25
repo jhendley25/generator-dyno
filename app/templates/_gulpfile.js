@@ -15,7 +15,7 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('compass', function() {
-  return gulp.src('./src/stylesheets/*.{scss,sass}')
+  return gulp.src('./src/stylesheets/**/*.{scss,sass}')
     .pipe($.plumber())
     .pipe($.compass({
       css: 'dist/stylesheets',
@@ -55,7 +55,7 @@ gulp.task('clean', function(cb) {
 });
 
 gulp.task('images', function() {
-  return gulp.src('./src/images/*')
+  return gulp.src('./src/images/**/*')
     .pipe($.imagemin({
       progressive: true
     }))
@@ -63,14 +63,14 @@ gulp.task('images', function() {
 })
 
 <% if (templateOption == 'jade') { %>gulp.task('templates', function() {
-  return gulp.src('src/*.jade')
+  return gulp.src('src/**/*.jade')
     .pipe($.plumber())
     .pipe($.jade({
       pretty: true
     }))
     .pipe( gulp.dest('dist/') )
 });<% } else { %>gulp.task('templates', function() {
-  return gulp.src('src/*.html')
+  return gulp.src('src/**/*.html')
     .pipe($.plumber())
     .pipe( gulp.dest('dist/') )
 });<% } %>
