@@ -3,12 +3,15 @@ var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
+var path = require('path');
 var mkdirp = require('mkdirp');
 var yosay = require('yosay');
 var semver = require('semver');
+var self;
 
 var DynoGenerator = yeoman.generators.Base.extend({
   init: function () {
+    self = this;
     this.pkg = require('../package.json');
 
     this.on('end', function () {
@@ -27,11 +30,15 @@ var DynoGenerator = yeoman.generators.Base.extend({
     var prompts = [{
       type: 'input',
       name: 'projectName',
-      message: 'What\'s the name of the project?'
+      message: 'What\'s the name of the project?',
+      default: path.basename(process.cwd()),
+      filter: function (value) {
+        return self._.camelize(self._.slugify(self._.humanize(value)));
+      }
     }, {
       type: 'input',
       name: 'projectVersion',
-      message: 'What\'s the version of the project? (SemVer)',
+      message: 'What\'s the version of the project?',
       default: '0.0.1',
       validate: function (value) {
         if (value == semver.valid(value)) {
