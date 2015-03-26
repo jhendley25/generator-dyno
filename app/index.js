@@ -22,8 +22,7 @@ var DynoGenerator = yeoman.generators.Base.extend({
   askFor: function () {
     var done = this.async();
 
-    this.log(yosay());
-    this.log(chalk.magenta('You\'re using the fantastic Dyno generator: \n Coffeescript, Jade Templates, Browserify, and Gulp'));
+    this.log(yosay('I scaffold you the best web apps with Coffeescript, Jade, Browserify and Gulp.'));
 
     var prompts = [{
       type: 'input',
