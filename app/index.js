@@ -5,7 +5,7 @@ var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var mkdirp = require('mkdirp');
 var yosay = require('yosay');
-var semverRegex = require('semver-regex');
+var semver = require('semver');
 
 var DynoGenerator = yeoman.generators.Base.extend({
   init: function () {
@@ -34,7 +34,11 @@ var DynoGenerator = yeoman.generators.Base.extend({
       message: 'What\'s the version of the project? (SemVer)',
       default: '0.0.1',
       validate: function (value) {
-        return semverRegex().test(value);
+        if (value == semver.valid(value)) {
+          return true;
+        } else {
+          return "Please use a semantic version number (http://semver.org/)"
+        }
       }
     }, {
       type: 'confirm',
