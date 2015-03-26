@@ -24,7 +24,16 @@
   ],
   "keywords": [
     "yeoman-generator",
-    "generator"
+    "generator",
+    "scaffold",
+    "frontend",
+    "front-end",
+    "component",
+    "coffeescript",
+    "sass",
+    "jade",
+    "app",
+    "web-app"
   ],
   "dependencies": {
     "chalk": "~1.0.0",
