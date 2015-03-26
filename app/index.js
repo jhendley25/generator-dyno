@@ -4,6 +4,7 @@ var path = require('path');
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var mkdirp = require('mkdirp');
+var yosay = require('yosay');
 var semverRegex = require('semver-regex');
 
 var DynoGenerator = yeoman.generators.Base.extend({
@@ -21,7 +22,7 @@ var DynoGenerator = yeoman.generators.Base.extend({
   askFor: function () {
     var done = this.async();
 
-    this.log(this.yeoman);
+    this.log(yosay());
     this.log(chalk.magenta('You\'re using the fantastic Dyno generator: \n Coffeescript, Jade Templates, Browserify, and Gulp'));
 
     var prompts = [{
