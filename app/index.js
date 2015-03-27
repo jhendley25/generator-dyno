@@ -13,13 +13,6 @@ var DynoGenerator = yeoman.generators.Base.extend({
   init: function () {
     self = this;
     this.pkg = require('../package.json');
-
-    this.on('end', function () {
-      this.installDependencies({
-        bower: this.bowerOption,
-        skipInstall: this.options['skip-install']
-      });
-    });
   },
 
   askFor: function () {
@@ -119,6 +112,13 @@ var DynoGenerator = yeoman.generators.Base.extend({
 
   projectfiles: function () {
     this.copy('editorconfig', '.editorconfig');
+  },
+
+  end: function () {
+    this.installDependencies({
+      bower: this.bowerOption,
+      skipInstall: this.options['skip-install']
+    });
   }
 });
 
