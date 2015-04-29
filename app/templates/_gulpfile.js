@@ -1,9 +1,10 @@
 var gulp            = require('gulp'),
-    // this is an arbitrary object that loads all gulp plugins in package.json.
     $           = require('gulp-load-plugins')(),
     path        = require('path'),
     browserSync = require('browser-sync'),
+    through2    = require('through2'),
     reload      = browserSync.reload,
+    browserify  = require('browserify'),
     del         = require('del');
 
 gulp.task('browser-sync', function() {
@@ -24,31 +25,27 @@ gulp.task('compass', function() {
     .pipe(gulp.dest('dist/stylesheets'));
 });
 
-<% if (coffeescriptOption) { %>
-gulp.task('coffee', function() {
-  return gulp.src('src/scripts/main.coffee', { read: false })
+
+gulp.task('js', function() {
+  return gulp.src('src/scripts/*.js')
     .pipe($.plumber())
-    .pipe($.browserify({
-      debug: true,
-      insertGlobals: false,
-      transform: ['coffeeify'],
-      extensions: ['.coffee']
-    }))
-    .pipe( $.rename('app.js') )
-    .pipe( gulp.dest('dist/scripts') );
-});
-<% } else { %>
-  gulp.task('js', function() {
-    return gulp.src('src/scripts/*.js')
-      .pipe($.plumber())
-      .pipe( $.browserify({
-        debug: true
+    .pipe(through2.obj(function (file, enc, next) {
+      browserify(file.path, { debug: true })
+        .transform(require('babelify'))
+        .bundle(function (err, res) {
+          if (err) { return next(err); }
+          file.contents = res;
+            next(null, file);
+        });
       }))
-      .pipe( $.uglify() )
-      .pipe( $.rename('app.js'))
-      .pipe( gulp.dest('dist/scripts/'));
-  });
-<% } %>
+      .on('error', function (error) {
+        console.log(error.stack);
+        this.emit('end')
+    })
+  .pipe( $.rename('app.js'))
+  .pipe( gulp.dest('dist/scripts/'));
+});
+
 
 gulp.task('clean', function(cb) {
   del('./dist', cb);
@@ -62,28 +59,19 @@ gulp.task('images', function() {
     .pipe(gulp.dest('./dist/images'))
 })
 
-<% if (templateOption == 'jade') { %>gulp.task('templates', function() {
-  return gulp.src('src/**/*.jade')
-    .pipe($.plumber())
-    .pipe($.jade({
-      pretty: true
-    }))
-    .pipe( gulp.dest('dist/') )
-});<% } else { %>gulp.task('templates', function() {
+gulp.task('templates', function() {
   return gulp.src('src/**/*.html')
     .pipe($.plumber())
     .pipe( gulp.dest('dist/') )
-});<% } %>
-<% if (coffeescriptOption) { %>
-gulp.task('build', ['compass', 'coffee', 'templates', 'images']);<% } else { %>
-gulp.task('build', ['compass', 'js', 'templates', 'images']);<% } %>
+});
+
+gulp.task('build', ['compass', 'js', 'templates', 'images']);
 
 gulp.task('serve', ['build', 'browser-sync'], function () {
-  gulp.watch('src/stylesheets/*.{scss,sass}',['compass', reload]);<% if (coffeescriptOption) { %>
-  gulp.watch('src/scripts/*.coffee',['coffee', reload]);<% } else { %>
-  gulp.watch('src/scripts/*.js',['js', reload]);<% } %>
+  gulp.watch('src/stylesheets/*.{scss,sass}',['compass', reload]);
+  gulp.watch('src/scripts/*.js',['js', reload]);
   gulp.watch('src/images/**/*',['images', reload]);
-  <% if (templateOption == 'jade') { %>gulp.watch('src/*.jade',['templates', reload]);<% } else { %>gulp.watch('src/*.html',['templates', reload]);<% } %>
+  gulp.watch('src/*.html',['templates', reload]);
 });
 
 gulp.task('default', ['serve']);

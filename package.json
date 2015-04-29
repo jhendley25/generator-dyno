@@ -1,7 +1,7 @@
 {
   "name": "generator-dyno",
   "version": "0.6.3",
-  "description": "Coffeescript (or Javascript), Browserify, Gulp, Jade, and Compass/Sass",
+  "description": "ES6-ready Javascript, with Browserify, Gulp, and Jade",
   "license": "MIT",
   "main": "app/index.js",
   "repository": {
