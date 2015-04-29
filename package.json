@@ -29,8 +29,10 @@
     "frontend",
     "front-end",
     "component",
-    "coffeescript",
+    "es6",
+    "babeljs",
     "sass",
+    "compass",
     "jade",
     "app",
     "web-app"
