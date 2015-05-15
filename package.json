@@ -42,6 +42,7 @@
     "gulp-load-plugins": "~0.10.0",
     "mkdirp": "^0.5.0",
     "semver": "^4.3.2",
+    "underscore.string": "^3.0.3",
     "yeoman-generator": "~0.19.2",
     "yosay": "^1.0.3"
   },

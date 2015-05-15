@@ -1,5 +1,5 @@
 {
-  "name": "<%= _.slugify(projectName) %>",
+  "name": "<%= projectName %>",
   "version": "<%= projectVersion %>",
   "devDependencies": {
     "browser-sync": "^1.8.1",

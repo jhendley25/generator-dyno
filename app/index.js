@@ -7,6 +7,7 @@ var path = require('path');
 var mkdirp = require('mkdirp');
 var yosay = require('yosay');
 var semver = require('semver');
+var _ = require('underscore.string');
 var self;
 
 var DynoGenerator = yeoman.generators.Base.extend({
@@ -26,7 +27,7 @@ var DynoGenerator = yeoman.generators.Base.extend({
       message: 'What\'s the name of the project?',
       default: path.basename(process.cwd()),
       filter: function (value) {
-        return self._.camelize(self._.slugify(self._.humanize(value)));
+        return _.camelize(_.slugify(_.humanize(value)));
       }
     }, {
       type: 'confirm',
@@ -64,7 +65,7 @@ var DynoGenerator = yeoman.generators.Base.extend({
     }];
 
     this.prompt(prompts, function (props) {
-      this.projectName = this._.str.camelize(props.projectName, true);
+      this.projectName = _.slugify(_.camelize(props.projectName, true));
       this.projectVersion = props.projectVersion;
       this.bowerOption = props.bowerOption;
       this.templateOption = props.templateOption;
@@ -78,7 +79,7 @@ var DynoGenerator = yeoman.generators.Base.extend({
     mkdirp('src');
     mkdirp('src/scripts');
 
-  
+
     this.template('_main.js', 'src/scripts/main.js');
     this.template('_example.js', 'src/scripts/example.js');
 
