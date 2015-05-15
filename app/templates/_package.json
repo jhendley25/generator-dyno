@@ -20,7 +20,6 @@
     "del": "^1.1.1",
     "babelify": "^6.0.2",
     "through2": "^0.6.5",
-    "browserify": "^9.0.8",
     "gulp-babel": "^5.1.0"
   }
 }
