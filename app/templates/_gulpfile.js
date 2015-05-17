@@ -5,10 +5,13 @@ var gulp            = require('gulp'),
     through2    = require('through2'),
     reload      = browserSync.reload,
     browserify  = require('browserify'),
-    del         = require('del');
+    del         = require('del'),
+    argv = require('yargs').argv;
 
 gulp.task('browser-sync', function() {
   browserSync({
+    open: !argv['skip-open'],
+    notify: argv['notify'],
     server: {
       baseDir: "./dist"
     }
