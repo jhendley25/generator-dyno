@@ -62,12 +62,23 @@ gulp.task('images', function() {
     }))
     .pipe(gulp.dest('./dist/images'))
 })
-
+<% if (templateOption=='jade') { %>
+gulp.task('templates', function() {
+  return gulp.src('src/*.jade')
+    .pipe($.plumber())
+    .pipe($.jade({
+      pretty: true
+    }))
+    .pipe( gulp.dest('dist/') )
+});
+<% }else{ %>
 gulp.task('templates', function() {
   return gulp.src('src/**/*.html')
     .pipe($.plumber())
     .pipe( gulp.dest('dist/') )
 });
+<% } %>
+
 
 gulp.task('build', ['compass', 'js', 'templates', 'images']);
 
