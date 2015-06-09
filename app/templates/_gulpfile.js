@@ -1,4 +1,4 @@
-var gulp            = require('gulp'),
+var gulp        = require('gulp'),
     $           = require('gulp-load-plugins')(),
     path        = require('path'),
     browserSync = require('browser-sync'),
@@ -6,7 +6,7 @@ var gulp            = require('gulp'),
     reload      = browserSync.reload,
     browserify  = require('browserify'),
     del         = require('del'),
-    argv = require('yargs').argv;
+    argv        = require('yargs').argv;
 
 gulp.task('browser-sync', function() {
   browserSync({
