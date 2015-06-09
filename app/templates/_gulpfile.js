@@ -35,6 +35,7 @@ gulp.task('js', function() {
     .pipe(through2.obj(function (file, enc, next) {
       browserify(file.path, { debug: true })
         .transform(require('babelify'))
+        .transform(require('debowerify'))
         .bundle(function (err, res) {
           if (err) { return next(err); }
           file.contents = res;
