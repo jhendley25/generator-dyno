@@ -1,6 +1,9 @@
 {
   "name": "<%= projectName %>",
   "version": "0.0.0",
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {<% if (installUnderscore) { %>
+    "underscore": "*"<% } %><% if (installJquery) { %>,
+    "jquery": "*"<% } %>
+    },
+  "devDependencies": {  }
 }

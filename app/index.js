@@ -50,6 +50,14 @@ var DynoGenerator = yeoman.generators.Base.extend({
         { name: 'Pure HTML', value: 'html' },
         { name: 'Jade', value: 'jade' }
       ]
+    },{
+      type: 'checkbox',
+      name: 'bowerComponents',
+      message: 'Would you like to install any of the following?',
+      choices: [
+        { name: 'Underscore', value: 'underscore', checked: true },
+        { name: 'jQuery', value: 'jquery', checked: false }
+      ]
     }, {
       type: 'input',
       name: 'projectVersion',
@@ -68,6 +76,8 @@ var DynoGenerator = yeoman.generators.Base.extend({
       this.projectName = _.slugify(_.camelize(props.projectName, true));
       this.projectVersion = props.projectVersion;
       this.bowerOption = props.bowerOption;
+      this.installUnderscore = props.bowerComponents.indexOf('underscore') !== -1;
+      this.installJquery= props.bowerComponents.indexOf('jquery') !== -1;
       this.templateOption = props.templateOption;
       this.styleOption = props.styleOption;
 
