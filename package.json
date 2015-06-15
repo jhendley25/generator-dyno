@@ -1,6 +1,6 @@
 {
   "name": "generator-dyno",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "ES6-ready Javascript, with Browserify, Gulp, and Jade",
   "license": "MIT",
   "main": "app/index.js",
