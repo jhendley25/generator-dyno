@@ -10,8 +10,8 @@ var gulp        = require('gulp'),
 
 gulp.task('browser-sync', function() {
   browserSync({
-    open: !argv['skip-open'],
-    notify: argv['notify'],
+    open: !!argv.open,
+    notify: !!argv.notify,
     server: {
       baseDir: "./dist"
     }
