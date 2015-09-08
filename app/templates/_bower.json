@@ -2,7 +2,7 @@
   "name": "<%= projectName %>",
   "version": "0.0.0",
   "dependencies": {<% if (installUnderscore) { %>
-    "underscore": "*"<% } %><% if (installJquery) { %>,
+    "underscore": "*"<% } %><% if (installJquery) { %><% if (installUnderscore) { %>,<% } %>
     "jquery": "*"<% } %>
     },
   "devDependencies": {  }
